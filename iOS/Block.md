@@ -65,7 +65,7 @@ int main(int argc, const char *argv[]) {
   return 0;
 }
 ```
-可以看出本次示例中 block 的底层结构是一个名为 `__main_block_impl_0` 的结构体，在我们声明 block 块时，即为 `__main_block_impl_0` 的构造。
+将 oc 翻译后的 cpp 代码中整理有用的部分，可以看出本次示例中 block 的底层结构是一个名为 `__main_block_impl_0` 的结构体，在我们声明 block 块时，即为 `__main_block_impl_0` 的构造。
 
 本次示例中，分别传入了 `__main_block_func_0` 和 `__main_block_desc_0_DATA` 构造，其中 `__main_block_func_0` 为函数指针，为我们在 block 块中的具体实现 `NSLog();` 最后赋值给 block 结构体中的 `__block_impl.FuncPtr` 指针，`__main_block_desc_0_DATA` 则为我们声明结构体的大小。
 
@@ -94,7 +94,7 @@ int main(int argc, const char * argv[]) {
 }
 ```
 
-这次我们在 block 块外，分别声明了一个 int 变量和一个 char * 变量，并且在 block 内使用。
+这次我们在 block 块外，分别声明了 int 变量和 char * 变量和一个 static 类型的变量并且在 block 内使用，看看 block 块内部分别怎么捕获变量。
 
 ```objc
 struct __block_impl {
