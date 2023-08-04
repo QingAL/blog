@@ -7,4 +7,5 @@ void function() {
 
 void MyLib2() {
     std::cout<< "in MyLib2\n";
+    function();
 }
