@@ -1,9 +1,8 @@
-cmake_minimum_required(VERSION 3.14)
-
 project(main)
 
 add_subdirectory(MyLib1)
 add_subdirectory(MyLib2)
+add_subdirectory(PreLoad)
 
 add_executable(main main.cpp)
 
